@@ -10,6 +10,11 @@ function initContactValidation(){
         return;
     }
 
+    const savedName = localStorage.getItem('draftContactName');
+    const savedEmail = localStorage.getItem('draftContactEmail');
+    if (savedName) contactName.value = savedName;
+    if (savedEmail) contactEmail.value = savedEmail;
+
     contactForm.addEventListener("submit",function(event){
         event.preventDefault();
 
@@ -51,11 +56,15 @@ function initContactValidation(){
         formMessage.classList.add("text-green-600");
         console.log("Valid credentials:",{name:name,email:email});
         contactForm.reset();
+        localStorage.removeItem('draftContactName');
+        localStorage.removeItem('draftContactEmail');
     });
     contactName.addEventListener("input",function(){
         formMessage.textContent = "";
+        localStorage.setItem('draftContactName', contactName.value);
     });
     contactEmail.addEventListener("input",function(){
         formMessage.textContent = "";
+        localStorage.setItem('draftContactEmail', contactEmail.value);
     });
 }

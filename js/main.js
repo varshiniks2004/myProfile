@@ -12,5 +12,17 @@ document.addEventListener("DOMContentLoaded",function(){
     renderExperience();
     renderCertifications();
     renderHackathons();
+    renderAboutMe();
+
+
+    initScrollProgress();
+    initScrollSpy();
+    initBackToTop();
+    initTypingAnimation();
+    initRecentlyViewed();
+    initDynamicGreeting();
+    initGeolocation();
+    initAboutMe();
+   
 
 })
