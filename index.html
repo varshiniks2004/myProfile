@@ -1,344 +1,404 @@
-<!-- MERN_Stu_FebMay26Mys\W4\D5\portfolio-project\index.html -->
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Week 3 & 4 Portfolio Project</title>
-
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-
-    <link rel="stylesheet" href="css/custom.css">
-
+    <title>Varshini K S - Portfolio</title>
+    <meta name="description" content="Personal Portfolio of Varshini K S - ECE Student, Frontend Developer, IoT & VLSI Enthusiast">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <div id="scroll-progress" class="fixed top-0 left-0 h-1 bg-blue-600 z-[100] transition-all duration-150" style="width: 0%"></div>
+    <!-- Custom Cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
 
-    <!-- HERO SECTION -->
-
-    <section class="min-h-screen flex flex-col lg:flex-row lg:items-center lg:justify-between px-8 lg:px-16 py-20 gap-12 lg:gap-20">
-
-        <div class="order-2 lg:order-1 flex-1 lg:max-w-lg text-center lg:text-left">
-            <h2 id="greeting" class="text-2xl font-semibold mb-2 text-blue-600"></h2>
-            <h1 class="text-5xl mb-6">Varshini KS</h1>
-
-            <p class="text-xl lg:text-2xl text-slate-600 font-bold mb-10 max-w-md mx-auto lg:mx-0 min-h-[4rem]">
-                <span id="typing-text"></span><span class="animate-pulse">|</span>
-            </p>
-
-            <p id="location-message" class="text-sm font-semibold mb-6 text-gray-500"></p>
-
-            <div
-                class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center lg:items-start mb-8">
-
-                <a href="#projects" class="bg-blue-400 hover:bg-grey-500 px-10 py-4 rounded shadow-xl">
-                    View Projects
-                </a>
-
-                <a href="#resume" class="bg-blue-400 hover:bg-grey-500 px-10 py-4 rounded shadow-xl">
-                    Download Resume
-                </a>
-
-            </div>
-
-            <div class="flex flex-wrap gap-6 justify-center lg:justify-start text-sm font-bold">
-
-                <span>800+ Github commits</span>
-                <span>100 LeetCode Questions Solved</span>
-                <span>5 live projects completed</span>
-
-            </div>
-
+    <!-- Page Loader -->
+    <div class="loader-wrapper">
+        <div class="loader">
+            <div class="loader-circle"></div>
+            <div class="loader-text">Loading...</div>
         </div>
-
-        <div class="order-1 lg:order-2 w-full lg:w-96 max-w-sm mx-auto lg:mx-0">
-
-            <img src="mine.jpeg" alt="My photo"
-                class="aspect-square w-full rounded shadow-lg mx-auto lg:mx-0 hover:ring-blue-500 transition-all duration-300 hover:scale-[1.02]"
-                loading="lazy">
-
-        </div>
-
-    </section>
-
-    <!-- NAVBAR -->
-
-    <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b shadow-lg">
-
-        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-
-            <a href="#"
-                class="text-2xl font-bold bg-clip-text bg-gradient-to-r from-red-400 to-slate-700 text-transparent">
-                
-            </a>
-
-            <ul class="hidden md:flex items-center gap-10">
-
-                <li><a href="#about" class="text-lg font-bold hover:text-blue-600 transition-colors">About</a></li>
-
-                <li><a href="#projects" class="text-lg font-bold hover:text-blue-600 transition-colors">Projects</a></li>
-
-               
-
-                <li><a href="#experience" class="text-lg font-bold hover:text-blue-600">Experience</a></li>
-                <li><a href="#education" class="text-lg font-bold hover:text-blue-600">Education</a></li>
-                  <li><a href="#hackathons" class="text-lg font-bold hover:text-blue-600">Hackathons</a></li>
-                <li><a href="#certifications" class="text-lg font-bold hover:text-blue-600">Certifications</a></li>
-
-                <li><a href="#skills" class="text-lg font-bold hover:text-blue-600">Skills</a></li>
-
-            </ul>
-            <button id="theme-toggle"
-                class="bg-blue-200 px-4 py-2 rounded font-bold">Theme</button>
-            </button>
-
-            <a href="#contact" class="bg-blue-100 hover:bg-grey-100 rounded transition-all duration-200 px-4 py-2">
-                Let's talk
-            </a>
-
-        </div>
-
-    </nav>
-
-        <section id="about" class="py-24 px-8 lg:px-16 bg-50 dark:bg-800 transition-colors duration-300">
-        <!-- Center-aligned wrapping container for textual content -->
-        <div class="max-w-4xl mx-auto text-center">
-            
-            <h2 class="text-4xl text-gray-700 dark:text-gray-200 mb-10">
-                About Me
-            </h2>
-            
-            <div id="about-container"></div>
-
-        </div>
-    </section>
-
-    <!-- PROJECTS -->
-
-    <section id="projects" class="py-24 px-8 lg:px-16">
-
-        <div class="max-w-7xl mx-auto">
-
-            <div class="text-center mb-10">
-
-                <h2 class="text-4xl lg:text-5xl mb-6">My Projects</h2>
-
-                <p class="text-xl max-w-2xl mx-auto">
-                    Enterprise scale full-stack applications built with modern frameworks
-                </p>
-
-            </div>
-
-            <!-- Project Search (Feature will attach here) -->
-
-            <div class="mb-10 text-center flex flex-col items-center gap-4">
-
-                <div class="flex flex-col sm:flex-row gap-4 w-full max-w-2xl justify-center">
-                    <input id="project-search" type="text" placeholder="Search projects..."
-                        class="border rounded px-6 py-3 w-full max-w-md">
-                        
-                    <select id="project-sort" class="border rounded px-6 py-3 bg-white focus:outline-none focus:ring-2 focus:ring-blue-500">
-                        <option value="default">Sort By</option>
-                        <option value="a-z">A - Z</option>
-                        <option value="z-a">Z - A</option>
-                    </select>
-                </div>
-
-                <p id="project-count" class="text-sm font-semibold text-gray-600 dark:text-gray-400"></p>
-
-            </div>
-
-            <!-- Project Filter Bar -->
-
-            <div id="project-filters" class="flex flex-wrap justify-center gap-4 mb-12">
-            </div>
-
-            <!-- Dynamic container for projects -->
-
-            <div id="projects-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            </div>
-
-            <!-- Recently Viewed Container -->
-            <div id="recently-viewed-container" class="mt-16 border-t pt-8 hidden">
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- EXPERIENCE -->
-
-    <section id="experience" class="py-24 px-8 lg:px-16">
-
-        <div class="max-w-4xl mx-auto">
-
-            <h2 class="text-4xl text-gray-700 text-center mb-20">
-                
-            </h2>
-
-            
-            <div class="space-y-16 text-left">
-
-                <!-- Experience Section -->
-                <div id="experience">
-                    <h3 class="text-3xl font-bold mb-8 text-black-600 flex items-center gap-3 justify-center md:justify-start">
-                        <span class="text-3xl inline-block"></span>
-                        Experience
-                    </h3>
-                    
-                    <div id="experience-container" class="relative pl-8 sm:pl-10 space-y-12 before:absolute before:inset-0  ">
-                    </div>
-                </div>
-
-                <!-- Education Section -->
-                <div id="education">
-                    <h3 class="text-3xl font-bold mb-8 text-black-600 flex items-center gap-3 justify-center md:justify-start">
-                        <span class="text-3xl inline-block"></span>
-                        Education
-                    </h3>
-                    
-                    <div id="education-container" class="relative pl-8 sm:pl-10 space-y-12 before:absolute before:inset-0">
-                    </div>
-                </div>
-
-                <!-- Hackathons Section -->
-                <div id="hackathons">
-                    <h3 class="text-3xl font-bold mb-8 text-black-600 flex items-center gap-3 justify-center md:justify-start">
-                        <span class="text-3xl inline-block"></span>
-                        Hackathons
-                    </h3>
-                    
-                    <div id="hackathons-container" class="relative space-y-12 before:absolute before:inset-0 ">
-                    </div>
-                </div>
-
-                <!-- Certifications Section -->
-                <div id="certifications">
-                    <h3 class="text-3xl font-bold mb-8 text-black-600 flex items-center gap-3 justify-center md:justify-start">
-                        <span class="text-3xl inline-block"></span>
-                        Certifications
-                    </h3>
-                    
-                    <div id="certifications-container" class="relative space-y-12 before:absolute before:inset-0 ">
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- SKILLS -->
-
-    <section id="skills" class="py-24 px-8 lg:px-16 bg-blue-100">
-
-        <div class="max-w-7xl mx-auto">
-
-            <h2 class="text-4xl text-center font-bold mb-20">
-                Skills
-            </h2>
-
-            <!-- Dynamic Skills Container -->
-            <div id="skills-filters" class="flex flex-wrap justify-center gap-4 mb-8"></div>
-
-            <div id="skills-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- CONTACT MODAL -->
-
-    <button id="modal-trigger"
-        class="fixed bottom-8 right-8 w-16 h-16 bg-blue-900 text-white rounded-full shadow-2xl flex items-center justify-center text-2xl font-bold">
-        ☏
-    </button>
-
-    <div id="contact-modal" class="fixed inset-0 z-50 hidden bg-black/50 backdrop-blur-md">
-
-        <div class="flex items-center justify-center min-h-screen p-4">
-
-            <div id="modal-content"
-                class="bg-white w-full max-w-md rounded-2xl shadow-2xl scale-95 opacity-0 transition-all duration-300">
-
-                <div class="sticky top-0 border-b p-8 pt-12 bg-white">
-
-                    <h3 class="text-2xl font-bold">Contact Me</h3>
-
-                    <button id="modal-close" class="absolute top-6 right-6 text-2xl font-bold">
-                        ×
-                    </button>
-
-                </div>
-
-                <form id="contact-form" class="p-8 space-y-4">
-
-                    <input id="contact-name" type="text" placeholder="Your name"
-                        class="w-full border rounded px-4 py-3">
-
-                    <input id="contact-email" type="email" placeholder="email@website.com"
-                        class="w-full border rounded px-4 py-3">
-
-                    <p id="form-message" class="text-sm text-red-500"></p>
-
-                    <div class="flex flex-col sm:flex-row gap-4 pt-4">
-
-                        <button type="button" id="form-cancel" class="flex-1 font-bold py-4 px-6">
-                            Cancel
-                        </button>
-
-                        <button type="submit" class="flex-1 font-bold py-4 px-6">
-                            Submit
-                        </button>
-
-                    </div>
-
-                </form>
-
-            </div>
-
-        </div>
-
     </div>
-    
 
-    <button id="back-to-top"
-        class="fixed bottom-28 right-8 w-14 h-14 bg-blue-500 hover:bg-blue-600 text-white rounded-full shadow-lg hidden items-center justify-center text-2xl z-40 transition-all duration-300 transform translate-y-4 opacity-0">
-        ↑
-    </button>
+    <!-- Background Particles -->
+    <div id="particles-container"></div>
 
-    <!-- MAIN JS ENTRY -->
-     <script src="js/data/projects.js"></script>
-     <script src="js/data/skills.js"></script>
-     <script src="js/data/education.js"></script>
-     <script src="js/data/experience.js"></script>
-     <script src="js/data/hackathon.js"></script>
-     <script src="js/data/certifications.js"></script>
-     <script src="js/data/about-me.js"></script>
-     <script src="js/features/about-me.js"></script>
-     <script src="js/features/typing-animation.js"></script>
-     <script src="js/features/skills-render.js"></script>
-     <script src="js/features/education.js"></script>
-     <script src="js/features/experience.js"></script>
-     <script src="js/features/hackathon.js"></script>
-     <script src="js/features/certifications.js"></script>
-     <script src="js/features/modal.js"></script>
-     <script src="js/features/contact-validation.js"></script>
-     <script src="js/features/theme-toggle.js"></script>
-     <script src="js/features/project-search.js"></script>
-     <script src="js/features/scroll-progress.js"></script>
-     <script src="js/features/scroll-spy.js"></script>
-     <script src="js/features/back-to-top.js"></script>
-     <script src="js/features/recently-viewed.js"></script>
-     <script src="js/features/dynamic-greeting.js"></script>
-     <script src="js/features/geolocation.js"></script>
-     <script src="js/main.js"></script>
+    <!-- Navbar -->
+    <header class="navbar glass-nav">
+        <div class="container nav-container">
+            <a href="#hero" class="logo">VKS<span>.</span></a>
+            <nav class="nav-links">
+                <a href="#hero" class="nav-link active">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
+            <div class="nav-controls">
+                <button id="theme-toggle" class="theme-btn" aria-label="Toggle Theme">
+                    <i class="fa-solid fa-moon dark-icon"></i>
+                    <i class="fa-solid fa-sun light-icon"></i>
+                </button>
+                <button class="hamburger" aria-label="Toggle Menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </div>
+    </header>
 
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero-section">
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <h2 class="greeting reveal">Hello, I'm</h2>
+                    <h1 class="name reveal delay-1">Varshini K S</h1>
+                    <div class="role-wrapper reveal delay-2">
+                        <span class="static-text">I am a </span>
+                        <span class="typing-text"></span><span class="cursor">|</span>
+                    </div>
+                    <p class="hero-desc reveal delay-3">
+                        Passionate about crafting beautiful digital experiences and building innovative hardware solutions. Bridging the gap between software and hardware.
+                    </p>
+                    <div class="hero-btns reveal delay-4">
+                        <a href="#projects" class="btn primary-btn magnetic-btn">
+                            <span>View Projects</span> <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                        <a href="ABC varshini (1).pdf" class="btn secondary-btn magnetic-btn">
+                            <span>Download Resume</span> <i class="fa-solid fa-download"></i>
+                        </a>
+                    </div>
+                    <div class="social-links reveal delay-5">
+                        <a href="www.linkedin.com/in/varshini-k-s-5992a6260" class="social-icon" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="https://github.com/varshiniks2004/MERN_Stu_FebMay26Mys" class="social-icon" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                        <a href="mailto:varshiniks9198@gmail.com" class="social-icon" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+                    </div>
+                </div>
+                <div class="hero-image reveal delay-3">
+                    <div class="img-wrapper glass-card">
+                        <img src="my photo 1.jpeg" alt="Varshini K S" class="profile-img">
+                        <div class="glow-blob blob-1"></div>
+                        <div class="glow-blob blob-2"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about-section section-padding">
+            <div class="container">
+                <div class="section-title reveal">
+                    <h2>About <span>Me</span></h2>
+                    <div class="title-line"></div>
+                </div>
+                <div class="about-content">
+                    <div class="about-text glass-card reveal">
+                        <h3>Professional Summary</h3>
+                        <p>Results-oriented, flexible worker with a history of producing excellent work in hectic settings. Renowned for having outstanding communication skills, a proactive attitude toward difficulties, and great problem-solving abilities. Enthusiastic about lifelong learning and making a significant contribution to the success of the team. I'm looking to use my background and skill set in a dynamic, growth-oriented position.</p>
+                    </div>
+                    <div class="stats-grid">
+                        <div class="stat-card glass-card reveal delay-1">
+                            <i class="fa-solid fa-graduation-cap stat-icon"></i>
+                            <h4 class="stat-number">8.0</h4>
+                            <p class="stat-text">CGPA</p>
+                        </div>
+                        <div class="stat-card glass-card reveal delay-2">
+                            <i class="fa-solid fa-code stat-icon"></i>
+                            <h4 class="stat-number">5+</h4>
+                            <p class="stat-text">Hackathons</p>
+                        </div>
+                        <div class="stat-card glass-card reveal delay-3">
+                            <i class="fa-solid fa-diagram-project stat-icon"></i>
+                            <h4 class="stat-number">10+</h4>
+                            <p class="stat-text">Projects</p>
+                        </div>
+                        <div class="stat-card glass-card reveal delay-4">
+                            <i class="fa-solid fa-certificate stat-icon"></i>
+                            <h4 class="stat-number">3+</h4>
+                            <p class="stat-text">Certifications</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="skills-section section-padding">
+            <div class="container">
+                <div class="section-title reveal">
+                    <h2>My <span>Skills</span></h2>
+                    <div class="title-line"></div>
+                </div>
+                <div class="skills-grid">
+                    <!-- Programming -->
+                    <div class="skill-card glass-card reveal delay-1">
+                        <div class="skill-icon"><i class="fa-brands fa-python"></i></div>
+                        <h4>Python</h4>
+                    </div>
+                    <div class="skill-card glass-card reveal delay-1">
+                        <div class="skill-icon"><i class="fa-solid fa-c"></i></div>
+                        <h4>C</h4>
+                    </div>
+                    <div class="skill-card glass-card reveal delay-1">
+                        <div class="skill-icon"><i class="fa-solid fa-database"></i></div>
+                        <h4>SQL</h4>
+                    </div>
+                    <!-- Web Dev -->
+                    <div class="skill-card glass-card reveal delay-2">
+                        <div class="skill-icon"><i class="fa-brands fa-html5"></i></div>
+                        <h4>HTML</h4>
+                    </div>
+                    <div class="skill-card glass-card reveal delay-2">
+                        <div class="skill-icon"><i class="fa-brands fa-css3-alt"></i></div>
+                        <h4>CSS</h4>
+                    </div>
+                    <div class="skill-card glass-card reveal delay-2">
+                        <div class="skill-icon"><i class="fa-brands fa-js"></i></div>
+                        <h4>JavaScript</h4>
+                    </div>
+                    <div class="skill-card glass-card reveal delay-2">
+                        <div class="skill-icon"><i class="fa-solid fa-laptop-code"></i></div>
+                        <h4>Frontend Dev</h4>
+                    </div>
+                    <!-- Hardware/VLSI -->
+                    <div class="skill-card glass-card reveal delay-3">
+                        <div class="skill-icon"><i class="fa-solid fa-microchip"></i></div>
+                        <h4>Verilog HDL</h4>
+                    </div>
+                    <div class="skill-card glass-card reveal delay-3">
+                        <div class="skill-icon"><i class="fa-solid fa-memory"></i></div>
+                        <h4>Vivado</h4>
+                    </div>
+                    <div class="skill-card glass-card reveal delay-3">
+                        <div class="skill-icon"><i class="fa-solid fa-microchip"></i></div>
+                        <h4>Cadence Virtuoso</h4>
+                    </div>
+                    <div class="skill-card glass-card reveal delay-3">
+                        <div class="skill-icon"><i class="fa-solid fa-network-wired"></i></div>
+                        <h4>IoT</h4>
+                    </div>
+                    <div class="skill-card glass-card reveal delay-3">
+                        <div class="skill-icon"><i class="fa-solid fa-server"></i></div>
+                        <h4>VLSI</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education" class="education-section section-padding">
+            <div class="container">
+                <div class="section-title reveal">
+                    <h2>My <span>Education</span></h2>
+                    <div class="title-line"></div>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-item reveal">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content glass-card">
+                            <div class="timeline-date">Dec 2022 - May 2026</div>
+                            <h3 class="timeline-title">Bachelor of Engineering in ECE</h3>
+                            <h4 class="timeline-subtitle">Maharaja Institute of Technology Mysore</h4>
+                            <p class="timeline-desc">CGPA: 8.0</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item reveal">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content glass-card">
+                            <div class="timeline-date">2020 - 2022</div>
+                            <h3 class="timeline-title">Pre-University (PUC)</h3>
+                            <h4 class="timeline-subtitle">Mandavya Excellence PU College, Mandya</h4>
+                            <p class="timeline-desc">Percentage: 90%</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item reveal">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content glass-card">
+                            <div class="timeline-date">2011 - 2020</div>
+                            <h3 class="timeline-title">High School (10th)</h3>
+                            <h4 class="timeline-subtitle">Cauvery Public School, Tubinakere</h4>
+                            <p class="timeline-desc">Percentage: 84%</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects-section section-padding">
+            <div class="container">
+                <div class="section-title reveal">
+                    <h2>Featured <span>Projects</span></h2>
+                    <div class="title-line"></div>
+                </div>
+                <div class="projects-grid">
+                    <!-- Project 1 -->
+                    <div class="project-card glass-card tilt-card reveal delay-1">
+                        <div class="project-img-wrapper">
+                            <div class="project-overlay">
+                                <a href="#" class="project-link"><i class="fa-brands fa-github"></i></a>
+                                <a href="#" class="project-link"><i class="fa-solid fa-link"></i></a>
+                            </div>
+                            <div class="project-placeholder"><i class="fa-solid fa-water"></i></div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Aqua Sonar: Acoustic Wave-Based Underwater Wireless Monitoring System</h3>
+                            <p>An innovative system leveraging acoustic waves for reliable underwater wireless communication and environmental monitoring.</p>
+                            <div class="tech-stack">
+                                <span>IoT</span>
+                                <span>Sensors</span>
+                                <span>Signal Processing</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Project 2 -->
+                    <div class="project-card glass-card tilt-card reveal delay-2">
+                        <div class="project-img-wrapper">
+                            <div class="project-overlay">
+                                <a href="#" class="project-link"><i class="fa-brands fa-github"></i></a>
+                                <a href="#" class="project-link"><i class="fa-solid fa-link"></i></a>
+                            </div>
+                            <div class="project-placeholder"><i class="fa-solid fa-city"></i></div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Intelligent Sewage Monitoring System Leveraging IoT</h3>
+                            <p>Smart city solution using IoT sensors to monitor sewage levels and detect hazardous gases in real-time to prevent blockages and accidents.</p>
+                            <div class="tech-stack">
+                                <span>IoT</span>
+                                <span>C</span>
+                                <span>Microcontrollers</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Project 3 -->
+                    <div class="project-card glass-card tilt-card reveal delay-3">
+                        <div class="project-img-wrapper">
+                            <div class="project-overlay">
+                                <a href="#" class="project-link"><i class="fa-brands fa-github"></i></a>
+                                <a href="#" class="project-link"><i class="fa-solid fa-link"></i></a>
+                            </div>
+                            <div class="project-placeholder"><i class="fa-solid fa-cloud-sun-rain"></i></div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Weather Forecasting Web Application</h3>
+                            <p>A responsive web application that provides real-time weather forecasts, utilizing third-party weather APIs for accurate data.</p>
+                            <div class="tech-stack">
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>JavaScript</span>
+                                <span>API</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications Section -->
+        <section id="certifications" class="certs-section section-padding">
+            <div class="container">
+                <div class="section-title reveal">
+                    <h2>Licenses & <span>Certifications</span></h2>
+                    <div class="title-line"></div>
+                </div>
+                <div class="certs-grid">
+                    <div class="cert-card glass-card reveal delay-1">
+                        <div class="cert-icon"><i class="fa-solid fa-award"></i></div>
+                        <div class="cert-info">
+                            <h3>Verilog HDL: VLSI Hardware Design Comprehensive Masterclass</h3>
+                            <p class="cert-issuer">Shepherd Tutorial</p>
+                        </div>
+                    </div>
+                    <div class="cert-card glass-card reveal delay-2">
+                        <div class="cert-icon"><i class="fa-solid fa-award"></i></div>
+                        <div class="cert-info">
+                            <h3>The Complete Python Bootcamp: From Zero to Hero</h3>
+                            <p class="cert-issuer">Jose Portilla, Pierian Training</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section section-padding">
+            <div class="container">
+                <div class="section-title reveal">
+                    <h2>Get In <span>Touch</span></h2>
+                    <div class="title-line"></div>
+                </div>
+                <div class="contact-container glass-card reveal delay-1">
+                    <div class="contact-info">
+                        <h3>Let's talk about everything!</h3>
+                        <p>Don't like forms? Send me an email.</p>
+                        <div class="contact-item">
+                            <i class="fa-solid fa-envelope"></i>
+                            <span>varshiniks919@gmail.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fa-solid fa-location-dot"></i>
+                            <span>Mandya, Karnataka, India</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fa-solid fa-phone"></i>
+                            <span>93805 92616</span>
+                        </div>
+                    </div>
+                    <form class="contact-form" id="contact-form">
+                        <div class="input-group">
+                            <input type="text" id="name" required>
+                            <label for="name">Your Name</label>
+                            <div class="input-border"></div>
+                        </div>
+                        <div class="input-group">
+                            <input type="email" id="email" required>
+                            <label for="email">Email Address</label>
+                            <div class="input-border"></div>
+                        </div>
+                        <div class="input-group">
+                            <input type="text" id="subject" required>
+                            <label for="subject">Subject</label>
+                            <div class="input-border"></div>
+                        </div>
+                        <div class="input-group">
+                            <textarea id="message" rows="5" required></textarea>
+                            <label for="message">Message</label>
+                            <div class="input-border"></div>
+                        </div>
+                        <button type="submit" class="btn primary-btn submit-btn magnetic-btn">
+                            <span>Send Message</span> <i class="fa-solid fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer glass-nav">
+        <div class="container footer-container">
+            <p>&copy; 2026 Varshini K S. All rights reserved.</p>
+            <div class="footer-socials">
+                <a href="#" class="social-icon"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="#" class="social-icon"><i class="fa-brands fa-github"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#hero" class="back-to-top glass-card" aria-label="Back to top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
 </body>
-
 </html>
